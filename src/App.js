@@ -1,23 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import Nav from './components/Nav';
+import Form from './components/Form';
+import ToDoCard from './components/To-Do_Card';
+import ToDoDisplay from './components/To-Do_Display';
+
 
 function App() {
+  let name = 'Eren';
+
+  const [tasks, setTasks] = useState([]);
+
+  const addTask = (task) => {
+    setTasks([...tasks, task]);
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Nav username={name} city={"Cotati"}/>
+      <Form addTask={addTask} />
+      {tasks.map((task, index) => (
+        <ToDoCard key={index} task={task} />
+      ))}
     </div>
   );
 }
