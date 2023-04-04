@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import Nav from './components/Nav';
 import Form from './components/Form';
-import ToDoCard from './components/To-Do_Card';
 import ToDoDisplay from './components/To-Do_Display';
 
 
@@ -18,9 +17,10 @@ function App() {
     <div className="App">
       <Nav username={name} city={"Cotati"}/>
       <Form addTask={addTask} />
-      {tasks.map((task, index) => (
-        <ToDoCard key={index} task={task} />
-      ))}
+      <div>
+        <h1>Tasks!</h1>
+      </div>
+      <ToDoDisplay tasks={tasks} />
     </div>
   );
 }
