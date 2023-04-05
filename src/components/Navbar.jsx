@@ -1,10 +1,11 @@
 import React from 'react'
 
-export default function Nav({ username, city }) {
+export default function Navbar() {
+
     return (
         <nav className="navbar bg-body-tertiary">
             <div className="container-fluid">
-                <a href="/" className="navbar-brand">Welcome {username} from {city} to the ToDo List!</a>
+                <a href="/" className="navbar-brand">To Do List</a>
             </div>
         </nav>
     )
